@@ -576,7 +576,7 @@ class ProductsPage {
 
   async showQuickView(productId) {
     const res = await fetch(
-      `http://127.0.0.1:8000/index.php?action=products&product_id=${productId}&user_id=${this.currentUser.id}`
+      `http://easicartapp.ademuyiwaadewoye.com/public/index.php?action=products&product_id=${productId}&user_id=${this.currentUser.id}`
     );
     const data = await res.json();
 
