@@ -31,7 +31,7 @@ class CartPage {
 
   async loadCart() {
     const res = await fetch(
-      `http://easicartapp.ademuyiwaadewoye.com/public/index.php?action=cart&user_id=${this.currentUser.id}`
+      `http://easicartapp.ademuyiwaadewoye.com/index.php?action=cart&user_id=${this.currentUser.id}`
     );
     const data = await res.json();
     this.cart = data.data;
