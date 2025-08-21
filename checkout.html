@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - EasiCart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/checkout.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+</head>
+<body>
+    <!-- TOP BANNER -->
+    <div class="top-banner">
+        <div class="container">
+            <a href="#">
+                <picture>
+                    <source srcset="./assets/top_banner_lg.gif" media="(min-width:769px)" />
+                    <source srcset="./assets/top_banner_sm.gif" media="(max-width:768px)" />
+                    <img src="./assets/top_banner_lg.gif" alt="" />
+                </picture>
+            </a>
+        </div>
+    </div>
+
+    <!-- Primary Navigation -->
+    <div class="primary-navigation">
+        <div class="container">
+            <a href="#" class="external-link">
+                <i class="bx bxs-star"></i>
+                <span>Sell on EasiCart</span>
+            </a>
+            <div class="easicart-brands">
+                <a href="#" class="easicart-logo">
+                    <span>EasiCart</span>
+                    <i class="bx bxs-star"></i>
+                </a>
+                <a href="#" class="j-food">
+                    <i class="bx bxs-meteor"></i>
+                    <span>Food</span>
+                </a>
+                <a href="#" class="j-pay">
+                    <i class="bx bx-shield-quarter"></i>
+                    <span>Pay</span>
+                </a>
+                <a href="#" class="j-force">
+                    <i class="bx bxs-star"></i>
+                    <span>Force</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/" class="brand-logo">
+                    <span>EasiCart</span><i class="bx bxs-star"></i>
+                </a>
+                <form class="d-flex" role="search">
+                    <div class="search-icon">
+                        <i class="bx bx-search-alt-2"></i>
+                    </div>
+                    <input
+                        class="form-control me-2"
+                        type="search"
+                        placeholder="Search products, brands and categories"
+                        aria-label="Search"
+                    />
+                    <button class="orange-btn" type="submit">Search</button>
+                </form>
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bx bx-user"></i>
+                            <span id="userMenuText">Account</span>
+                        </a>
+                        <ul class="dropdown-menu" id="userDropdown">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bx bx-help-circle"></i> <span>Help</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Place & Track Order</a></li>
+                            <li><a class="dropdown-item" href="#">Order Cancellation</a></li>
+                            <li><a class="dropdown-item" href="#">Return & Refunds</a></li>
+                            <li><a class="dropdown-item" href="#">Payments and EasiCart Accounts</a></li>
+                            <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><button class="orange-btn">Live Help</button></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bx bx-cart"></i><span>Cart <span id="cartCount" class="badge bg-danger">0</span></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./cart.html">View Cart</a></li>
+                            <li><a class="dropdown-item" href="./checkout.html">Checkout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="container">
+            <div class="checkout-section">
+                <div class="checkout-header">
+                    <h1>Checkout</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="./cart.html">Cart</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="checkout-content">
+                <!-- Checkout Form -->
+                <div class="checkout-form-section">
+                    <form id="checkoutForm">
+                        <!-- Shipping Information -->
+                        <div class="form-section">
+                            <h3><i class="bx bx-shipping"></i> Shipping Information</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="shippingFirstName">First Name *</label>
+                                        <input type="text" id="shippingFirstName" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="shippingLastName">Last Name *</label>
+                                        <input type="text" id="shippingLastName" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="shippingEmail">Email *</label>
+                                <input type="email" id="shippingEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="shippingPhone">Phone Number *</label>
+                                <input type="tel" id="shippingPhone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="shippingAddress">Address *</label>
+                                <input type="text" id="shippingAddress" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="shippingCity">City *</label>
+                                        <input type="text" id="shippingCity" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="shippingState">State *</label>
+                                        <input type="text" id="shippingState" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="shippingZip">ZIP Code *</label>
+                                        <input type="text" id="shippingZip" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="shippingCountry">Country *</label>
+                                <select id="shippingCountry" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="NG">Nigeria</option>
+                                    <option value="KE">Kenya</option>
+                                    <option value="UG">Uganda</option>
+                                    <option value="GH">Ghana</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Billing Information -->
+                        <div class="form-section">
+                            <h3><i class="bx bx-credit-card"></i> Billing Information</h3>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="sameAsShipping" checked>
+                                <label class="form-check-label" for="sameAsShipping">
+                                    Same as shipping address
+                                </label>
+                            </div>
+                            <div id="billingFields" style="display: none;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="billingFirstName">First Name *</label>
+                                            <input type="text" id="billingFirstName">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="billingLastName">Last Name *</label>
+                                            <input type="text" id="billingLastName">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="billingAddress">Address *</label>
+                                    <input type="text" id="billingAddress">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="billingCity">City *</label>
+                                            <input type="text" id="billingCity">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="billingState">State *</label>
+                                            <input type="text" id="billingState">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="billingZip">ZIP Code *</label>
+                                            <input type="text" id="billingZip">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="billingCountry">Country *</label>
+                                    <select id="billingCountry">
+                                        <option value="">Select Country</option>
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <option value="NG">Nigeria</option>
+                                        <option value="KE">Kenya</option>
+                                        <option value="UG">Uganda</option>
+                                        <option value="GH">Ghana</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="form-section">
+                            <h3><i class="bx bx-payment"></i> Payment Method</h3>
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" checked>
+                                    <label for="creditCard">
+                                        <i class="bx bx-credit-card"></i>
+                                        Credit/Debit Card
+                                    </label>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                                    <label for="paypal">
+                                        <i class="bx bxl-paypal"></i>
+                                        PayPal
+                                    </label>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="bankTransfer" name="paymentMethod" value="bankTransfer">
+                                    <label for="bankTransfer">
+                                        <i class="bx bx-bank"></i>
+                                        Bank Transfer
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Credit Card Fields -->
+                            <div id="creditCardFields">
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number *</label>
+                                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="expiryDate">Expiry Date *</label>
+                                            <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="cvv">CVV *</label>
+                                            <input type="text" id="cvv" placeholder="123" maxlength="4">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardholderName">Cardholder Name *</label>
+                                    <input type="text" id="cardholderName" placeholder="Name on card">
+                                </div>
+                            </div>
+
+                            <!-- PayPal Fields -->
+                            <div id="paypalFields" style="display: none;">
+                                <div class="alert alert-info">
+                                    <i class="bx bx-info-circle"></i>
+                                    You will be redirected to PayPal to complete your payment.
+                                </div>
+                            </div>
+
+                            <!-- Bank Transfer Fields -->
+                            <div id="bankTransferFields" style="display: none;">
+                                <div class="alert alert-info">
+                                    <i class="bx bx-info-circle"></i>
+                                    Bank transfer details will be provided after order confirmation.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Notes -->
+                        <div class="form-section">
+                            <h3><i class="bx bx-note"></i> Order Notes</h3>
+                            <div class="form-group">
+                                <label for="orderNotes">Special Instructions (Optional)</label>
+                                <textarea id="orderNotes" rows="3" placeholder="Any special instructions for delivery..."></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <div class="summary-card">
+                        <h4>Order Summary</h4>
+                        
+                        <div class="order-items" id="orderItems">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="summarySubtotal">$0.00</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Shipping:</span>
+                            <span id="summaryShipping">$0.00</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Tax:</span>
+                            <span id="summaryTax">$0.00</span>
+                        </div>
+                        
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="summaryTotal">$0.00</span>
+                        </div>
+
+                        <!-- Place Order Button -->
+                        <button class="btn btn-warning btn-lg w-100 mb-3" id="placeOrderBtn">
+                            <i class="bx bx-lock"></i> Place Order Securely
+                        </button>
+
+                        <!-- Security Info -->
+                        <div class="security-info">
+                            <div class="security-item">
+                                <i class="bx bx-shield-check"></i>
+                                <span>256-bit SSL Encryption</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="bx bx-lock"></i>
+                                <span>Secure Payment Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>About EasiCart</h5>
+                    <p>Your trusted online shopping destination for quality products at great prices.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Help Center</a></li>
+                        <li><a href="#" class="text-white-50">Contact Us</a></li>
+                        <li><a href="#" class="text-white-50">Returns & Refunds</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Sell on EasiCart</a></li>
+                        <li><a href="#" class="text-white-50">Become a Partner</a></li>
+                        <li><a href="#" class="text-white-50">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="bx bxl-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bx bxl-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2024 EasiCart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+    <script src="./js/auth-utils.js"></script>
+    <script src="./js/checkout.js"></script>
+</body>
+</html>

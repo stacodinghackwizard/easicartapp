@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EasiCart | For shopping Groceries</title>
+    <!-- Bootstrap css cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <!-- Box icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap css cdn -->
+    <!-- SWIPER CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <!-- Custom css -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+  </head>
+  <body>
+    <!-- TOP BANNER -->
+    <div class="top-banner">
+      <div class="container">
+        <a href="#">
+          <picture>
+            <source
+              srcset="./assets/top_banner_lg.gif"
+              media="(min-width:769px)"
+            />
+            <source
+              srcset="./assets/top_banner_sm.gif"
+              media="(max-width:768px)"
+            />
+            <img src="./assets/top_banner_lg.gif" alt="" />
+          </picture>
+        </a>
+      </div>
+    </div>
+    <!-- TOP BANNER END -->
+    <!-- Primary Navigation -->
+    <div class="primary-navigation">
+      <div class="container">
+        <a href="#" class="external-link">
+          <i class="bx bxs-star"></i>
+          <span>Sell on EasiCart</span></a
+        >
+        <div class="easicart-brands">
+          <a href="#" class="easicart-logo">
+            <span>EasiCart</span>
+            <i class="bx bxs-star"></i>
+          </a>
+          <a href="#" class="j-food">
+            <i class="bx bxs-meteor"></i>
+            <span>Food</span>
+          </a>
+          <a href="#" class="j-pay">
+            <i class="bx bx-shield-quarter"></i>
+            <span>Pay</span>
+          </a>
+          <a href="#" class="j-force">
+            <i class="bx bxs-star"></i>
+            <span>Force</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Primary Navigation end -->
+    <!-- Main Navigation -->
+    <header>
+      <div class="container">
+        <nav>
+          <a href="/" class="brand-logo"
+            ><span>EasiCart</span><i class="bx bxs-star"></i
+          ></a>
+          <form class="d-flex" role="search" id="searchForm">
+            <div class="search-icon">
+              <i class="bx bx-search-alt-2"></i>
+            </div>
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search products, brands and categories"
+              aria-label="Search"
+              id="searchInput"
+            />
+            <button class="orange-btn" type="submit">Search</button>
+          </form>
+          <ul class="nav-list">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="userMenuToggle"
+              >
+                <i class="bx bx-user"></i>
+                <span id="userMenuText">Account</span>
+              </a>
+              <ul class="dropdown-menu" id="userDropdown">
+                <li id="authButtons">
+                  <a href="./auth/login.html" class="orange-btn">Sign In</a>
+                </li>
+                <li id="userMenu" style="display: none;">
+                  <hr class="dropdown-divider" />
+                  <li>
+                    <a class="dropdown-item" href="./auth/change_password.html"
+                      ><i class="bx bx-lock"></i> <span>Change Password</span></a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./orders.html"
+                      ><i class="bx bx-package"></i><span>My Orders</span></a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./wishlist.html"
+                      ><i class="bx bx-heart"></i><span>Wishlist</span></a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <button class="dropdown-item" id="logoutBtn" style="border: none; background: none; width: 100%; text-align: left; padding: 0.5rem 1rem;">
+                      <i class="bx bx-log-out"></i> <span>Logout</span>
+                    </button>
+                  </li>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bx bx-help-circle"></i> <span>Help</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#">Place & Track Order</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Order Cancellation</a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="#">Return & Refunds</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Payments and EasiCart Accounts</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >Payments and EasiCart Accounts</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Contact Us</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <button class="orange-btn">Live Help</button>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="cartMenuToggle"
+              >
+                <i class="bx bx-cart"></i>
+                <span id="cartMenuText">Cart</span>
+                <span id="cartCount" class="badge bg-danger ms-1" style="display: none;">0</span>
+              </a>
+              <ul class="dropdown-menu" id="cartDropdown">
+                <li id="cartEmpty" class="dropdown-item">
+                  <i class="bx bx-cart"></i> Your cart is empty
+                </li>
+                <li id="cartItems" style="display: none;">
+                  <div id="cartPreview" class="p-2">
+                    <!-- Cart items will be populated here -->
+                  </div>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="./cart.html">
+                      <i class="bx bx-cart"></i> View Cart
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./checkout.html">
+                      <i class="bx bx-credit-card"></i> Checkout
+                    </a>
+                  </li>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile-nav">
+          <div class="left-mobile">
+            <button
+              class="header-btn"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasWithBothOptions"
+              aria-controls="offcanvasWithBothOptions"
+            >
+              <i class="bx bx-menu"></i>
+            </button>
+
+            <a href="/" class="brand-logo"
+              ><span>EasiCart</span><i class="bx bxs-star"></i
+            ></a>
+          </div>
+          <div class="right-mobile">
+            <button class="header-btn" id="mobileSearchBtn">
+              <i class="bx bx-search-alt-2"></i>
+            </button>
+            <a href="./auth/login.html" id="mobileUserBtn"><i class="bx bx-user"></i></a>
+            <a href="./cart.html" id="mobileCartBtn">
+              <i class="bx bx-cart"></i>
+              <span id="mobileCartCount" class="badge bg-danger" style="display: none;">0</span>
+            </a>
+          </div>
+          <!-- OFF CANVAS SIDEBAR MENU -->
+          <div
+            class="offcanvas offcanvas-start"
+            data-bs-scroll="true"
+            tabindex="-1"
+            id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel"
+          >
+            <div class="offcanvas-header">
+              <a href="/" class="brand-logo"
+                ><span>EasiCart</span><i class="bx bxs-star"></i
+              ></a>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="sidebar-menu">
+                <a href="/" class="link-with-icon"
+                  ><i class="bx bx-message-dots"></i> <span>Live Chat</span>
+                </a>
+                <a href="./auth/login.html" class="colored-links" id="sidebarAccountLink">
+                  <span>My EasiCart Account</span>
+                  <i class="bx bx-chevron-right"></i>
+                </a>
+                                 <a href="./orders.html" class="link-with-icon" id="sidebarOrdersLink">
+                   <i class="bx bx-briefcase"></i><span>My Orders</span>
+                 </a>
+                 <!-- reviews -->
+                 <a href="#" class="link-with-icon" id="sidebarReviewsLink">
+                   <i class="bx bx-message-square-edit"></i><span>Pending Reviews</span>
+                 </a>
+                 <!-- voucher -->
+                 <a href="#" class="link-with-icon">
+                   <i class="bx bx-purchase-tag-alt"></i><span>Vouchers</span>
+                 </a>
+                 <!-- saved items -->
+                 <a href="./wishlist.html" class="link-with-icon" id="sidebarWishlistLink">
+                   <i class="bx bx-heart"></i><span>Wishlist</span>
+                 </a>
+                <a href="./product.html" class="colored-links">
+                  <span>Shop All Products</span>
+                  <span class="see-all"> See All </span>
+                </a>
+                <!-- supermarket -->
+                <a href="./product.html?category=supermarket" class="link-with-icon">
+                  <i class="bx bx-store"></i><span>Supermarket</span>
+                </a>
+                <!-- phone -->
+                <a href="./product.html?category=electronics" class="link-with-icon">
+                  <i class="bx bx-mobile"></i><span>Phones & Tablets</span>
+                </a>
+                <a href="./product.html?category=home" class="link-with-icon">
+                  <i class="bx bx-building-house"></i><span>Home & Office</span>
+                </a>
+                <a href="./product.html?category=electronics" class="link-with-icon">
+                  <i class="bx bx-gas-pump"></i><span>Electronics</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Navigation end -->
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <div class="container">
+        <section class="hero-section">
+          <div class="left-sidebar">
+            <a href="./product.html?category=supermarket" class="link-with-icon"
+              ><i class="bx bx-store"></i> <span>Supermarket</span>
+            </a>
+            <a href="./product.html?category=home" class="link-with-icon"
+              ><i class="bx bx-building-house"></i> <span>Home & Office</span>
+            </a>
+            <a href="./product.html?category=appliances" class="link-with-icon"
+              ><i class="bx bx-shower"></i><span>Appliances</span>
+            </a>
+            <a href="./product.html?category=electronics" class="link-with-icon"
+              ><i class="bx bx-gas-pump"></i><span>Electronics</span>
+            </a>
+            <a href="./product.html?category=beauty" class="link-with-icon"
+              ><i class="bx bx-shekel"></i> <span>Health and Beauty</span>
+            </a>
+            <a href="./product.html?category=fashion" class="link-with-icon"
+              ><i class="bx bx-diamond"></i><span>Fashion</span>
+            </a>
+            <a href="./product.html?category=computing" class="link-with-icon"
+              ><i class="bx bx-desktop"></i> <span>Computing</span>
+            </a>
+            <a href="./product.html?category=sports" class="link-with-icon"
+              ><i class="bx bx-run"></i> <span>Sporting Goods</span>
+            </a>
+            <a href="./product.html?category=baby" class="link-with-icon"
+              ><i class="bx bx-accessibility"></i> <span>Baby Products</span>
+            </a>
+            <a href="./product.html?category=gaming" class="link-with-icon"
+              ><i class="bx bxl-discord-alt"></i> <span>Gaming</span>
+            </a>
+            <a href="./product.html" class="link-with-icon"
+              ><i class="bx bx-dots-horizontal-rounded"></i>
+              <span>All Categories</span>
+            </a>
+          </div>
+          <div class="home-slider">
+            <!-- Slider main container -->
+            <div class="swiper" id="homeSlider">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <div class="slide">
+                    <a href="#">
+                      <img
+                        src="./assets/home-slides/slide-1.gif"
+                        alt="Slide 1"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide">
+                    <a href="#">
+                      <img
+                        src="./assets/home-slides/slide-2.png"
+                        alt="Slide 2"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide">
+                    <a href="#">
+                      <img
+                        src="./assets/home-slides/slide-3.png"
+                        alt="Slide 3"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide">
+                    <a href="#">
+                      <img
+                        src="./assets/home-slides/slide-4.png"
+                        alt="Slide 4"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide">
+                    <a href="#">
+                      <img
+                        src="./assets/home-slides/slide-5.png"
+                        alt="Slide 5"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide">
+                    <a href="#">
+                      <img
+                        src="./assets/home-slides/slide-6.gif"
+                        alt="Slide 6"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide">
+                    <a href="#">
+                      <img
+                        src="./assets/home-slides/slide-7.gif"
+                        alt="Slide 7"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide">
+                    <a href="#">
+                      <img
+                        src="./assets/home-slides/slide-8.png"
+                        alt="Slide 8"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <div class="right-sidebar">
+            <div class="right-sidebar-links">
+              <a href="">
+                <div class="icon">
+                  <img src="./assets/icons/help.png" alt="" />
+                </div>
+                <div class="details">
+                  <p class="title">Help Center</p>
+                  <small>Guide to customer care</small>
+                </div>
+              </a>
+              <a href="">
+                <div class="icon">
+                  <img src="./assets/icons/return.png" alt="" />
+                </div>
+                <div class="details">
+                  <p class="title">Easy Return</p>
+                  <small>Quick refund</small>
+                </div>
+              </a>
+              <a href="">
+                <div class="icon">
+                  <img src="./assets/icons/sell.png" alt="" />
+                </div>
+                <div class="details">
+                  <p class="title">Sell on EasiCart</p>
+                  <small>Millions of Visitors</small>
+                </div>
+              </a>
+            </div>
+            <div class="sibar-gif">
+              <img src="./assets/sidebar.gif" alt="EasiCart Sidebar gif" />
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- MAIN CONTENT END -->
+
+    <!-- Bootsrap js cdn -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+      integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+      integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootsrap js cdn -->
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- Custom js -->
+    <script src="./js/auth-utils.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+      // Main page functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        // Check authentication status and update UI using AuthUtils
+        const user = AuthUtils.checkAuthStatus();
+        updateMainPageUI(user);
+
+        // Setup search functionality
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('searchInput');
+        
+        if (searchForm && searchInput) {
+          searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = searchInput.value.trim();
+            if (query) {
+              window.location.href = `./product.html?search=${encodeURIComponent(query)}`;
+            }
+          });
+        }
+
+        // Setup mobile search button
+        const mobileSearchBtn = document.getElementById('mobileSearchBtn');
+        if (mobileSearchBtn) {
+          mobileSearchBtn.addEventListener('click', function() {
+            searchInput.focus();
+          });
+        }
+
+        // Setup logout functionality
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+          logoutBtn.addEventListener('click', function() {
+            AuthUtils.logout();
+          });
+        }
+
+        // Update cart count and preview only if user is logged in
+        if (user) {
+          updateCartDisplay();
+        }
+      });
+
+      // Function to update main page UI based on authentication status
+      function updateMainPageUI(user) {
+        // Use the specialized utility function for index page
+        AuthUtils.updateIndexPageUI(user);
+        
+        // Update cart display if user is logged in
+        if (user) {
+          updateCartDisplay();
+        }
+      }
+
+      // Function to update cart display
+      function updateCartDisplay() {
+        try {
+          const user = AuthUtils.checkAuthStatus();
+          if (!user || !user.id) return;
+
+          const cartKey = `cart_${user.id}`;
+          const cartData = localStorage.getItem(cartKey);
+          if (!cartData) return;
+
+          const cart = JSON.parse(cartData);
+          if (!Array.isArray(cart)) return;
+
+          const cartCount = cart.reduce((total, item) => total + (item.quantity || 0), 0);
+          
+          // Update cart count badges
+          const cartCountElement = document.getElementById('cartCount');
+          const mobileCartCount = document.getElementById('mobileCartCount');
+          
+          if (cartCountElement) {
+            if (cartCount > 0) {
+              cartCountElement.textContent = cartCount;
+              cartCountElement.style.display = 'inline';
+            } else {
+              cartCountElement.style.display = 'none';
+            }
+          }
+          
+          if (mobileCartCount) {
+            if (cartCount > 0) {
+              mobileCartCount.textContent = cartCount;
+              mobileCartCount.style.display = 'inline';
+            } else {
+              mobileCartCount.style.display = 'none';
+            }
+          }
+
+          // Update cart preview only if cart has items
+          if (cart.length > 0) {
+            updateCartPreview(cart);
+          }
+        } catch (error) {
+          console.error('Error updating cart display:', error);
+        }
+      }
+
+      // Function to update cart preview
+      function updateCartPreview(cart) {
+        try {
+          if (!cart || !Array.isArray(cart)) return;
+          
+          const cartEmpty = document.getElementById('cartEmpty');
+          const cartItems = document.getElementById('cartItems');
+          const cartPreview = document.getElementById('cartPreview');
+
+          if (!cartEmpty || !cartItems || !cartPreview) return;
+
+          if (cart.length === 0) {
+            cartEmpty.style.display = 'block';
+            cartItems.style.display = 'none';
+          } else {
+            cartEmpty.style.display = 'none';
+            cartItems.style.display = 'block';
+            
+            const previewHTML = cart.slice(0, 3).map(item => `
+              <div class="d-flex align-items-center mb-2">
+                <img src="${item.image || ''}" alt="${item.title || 'Product'}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;" class="me-2">
+                <div class="flex-grow-1">
+                  <div class="small text-truncate">${item.title || 'Product'}</div>
+                  <div class="small text-muted">Qty: ${item.quantity || 0}</div>
+                </div>
+                <div class="small fw-bold">$${((item.currentPrice || item.price || 0)).toFixed(2)}</div>
+              </div>
+            `).join('');
+            
+            if (cart.length > 3) {
+              previewHTML += `<div class="small text-muted text-center">+${cart.length - 3} more items</div>`;
+            }
+            
+            cartPreview.innerHTML = previewHTML;
+          }
+        } catch (error) {
+          console.error('Error updating cart preview:', error);
+        }
+      }
+
+      // Listen for storage changes to update cart display
+      let isUpdatingCart = false;
+      window.addEventListener('storage', function(e) {
+        try {
+          if (e.key && e.key.startsWith('cart_') && !isUpdatingCart) {
+            isUpdatingCart = true;
+            const user = AuthUtils.checkAuthStatus();
+            if (user) {
+              updateCartDisplay();
+            }
+            // Reset flag after a short delay
+            setTimeout(() => {
+              isUpdatingCart = false;
+            }, 100);
+          }
+        } catch (error) {
+          console.error('Error handling storage event:', error);
+          isUpdatingCart = false;
+        }
+      });
+    </script>
+  </body>
+</html>

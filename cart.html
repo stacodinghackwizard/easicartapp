@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - EasiCart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+</head>
+<body>
+    <!-- TOP BANNER -->
+    <div class="top-banner">
+        <div class="container">
+            <a href="#">
+                <picture>
+                    <source srcset="./assets/top_banner_lg.gif" media="(min-width:769px)" />
+                    <source srcset="./assets/top_banner_sm.gif" media="(max-width:768px)" />
+                    <img src="./assets/top_banner_lg.gif" alt="" />
+                </picture>
+            </a>
+        </div>
+    </div>
+
+    <!-- Primary Navigation -->
+    <div class="primary-navigation">
+        <div class="container">
+            <a href="#" class="external-link">
+                <i class="bx bxs-star"></i>
+                <span>Sell on EasiCart</span>
+            </a>
+            <div class="easicart-brands">
+                <a href="#" class="easicart-logo">
+                    <span>EasiCart</span>
+                    <i class="bx bxs-star"></i>
+                </a>
+                <a href="#" class="j-food">
+                    <i class="bx bxs-meteor"></i>
+                    <span>Food</span>
+                </a>
+                <a href="#" class="j-pay">
+                    <i class="bx bx-shield-quarter"></i>
+                    <span>Pay</span>
+                </a>
+                <a href="#" class="j-force">
+                    <i class="bx bxs-star"></i>
+                    <span>Force</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/" class="brand-logo">
+                    <span>EasiCart</span><i class="bx bxs-star"></i>
+                </a>
+                <form class="d-flex" role="search">
+                    <div class="search-icon">
+                        <i class="bx bx-search-alt-2"></i>
+                    </div>
+                    <input
+                        class="form-control me-2"
+                        type="search"
+                        placeholder="Search products, brands and categories"
+                        aria-label="Search"
+                    />
+                    <button class="orange-btn" type="submit">Search</button>
+                </form>
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bx bx-user"></i>
+                            <span id="userMenuText">Account</span>
+                        </a>
+                        <ul class="dropdown-menu" id="userDropdown">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bx bx-help-circle"></i> <span>Help</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Place & Track Order</a></li>
+                            <li><a class="dropdown-item" href="#">Order Cancellation</a></li>
+                            <li><a class="dropdown-item" href="#">Return & Refunds</a></li>
+                            <li><a class="dropdown-item" href="#">Payments and EasiCart Accounts</a></li>
+                            <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><button class="orange-btn">Live Help</button></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bx bx-cart"></i><span>Cart <span id="cartCount" class="badge bg-danger">0</span></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./cart.html">View Cart</a></li>
+                            <li><a class="dropdown-item" href="./checkout.html">Checkout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="container">
+            <div class="cart-section">
+                <div class="cart-header">
+                    <h1>Shopping Cart</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="cart-content">
+                <!-- Cart Items -->
+                <div class="cart-items-section">
+                    <div class="cart-items-header">
+                        <h3>Cart Items (<span id="cartItemsCount">0</span>)</h3>
+                        <button class="btn btn-outline-danger btn-sm" id="clearCartBtn">
+                            <i class="bx bx-trash"></i> Clear Cart
+                        </button>
+                    </div>
+
+                    <div class="cart-items" id="cartItems">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+
+                    <!-- Empty Cart State -->
+                    <div class="empty-cart" id="emptyCart" style="display: none;">
+                        <div class="empty-cart-content">
+                            <i class="bx bx-cart"></i>
+                            <h3>Your cart is empty</h3>
+                            <p>Looks like you haven't added any items to your cart yet.</p>
+                            <a href="./product.html" class="btn btn-warning">
+                                Start Shopping
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <div class="summary-card">
+                        <h4>Order Summary</h4>
+                        
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Shipping:</span>
+                            <span id="shipping">$0.00</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Tax:</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="total">$0.00</span>
+                        </div>
+
+                        <!-- Coupon Code -->
+                        <div class="coupon-section">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Enter coupon code" id="couponInput">
+                                <button class="btn btn-outline-secondary" type="button" id="applyCouponBtn">Apply</button>
+                            </div>
+                            <div id="couponMessage"></div>
+                        </div>
+
+                        <!-- Checkout Button -->
+                        <button class="btn btn-warning btn-lg w-100 mb-3" id="checkoutBtn" disabled>
+                            Proceed to Checkout
+                        </button>
+
+                        <!-- Continue Shopping -->
+                        <a href="./product.html" class="btn btn-outline-secondary w-100">
+                            <i class="bx bx-arrow-back"></i> Continue Shopping
+                        </a>
+                    </div>
+
+                    <!-- Security Info -->
+                    <div class="security-info">
+                        <div class="security-item">
+                            <i class="bx bx-shield-check"></i>
+                            <span>Secure Checkout</span>
+                        </div>
+                        <div class="security-item">
+                            <i class="bx bx-credit-card"></i>
+                            <span>Multiple Payment Options</span>
+                        </div>
+                        <div class="security-item">
+                            <i class="bx bx-undo"></i>
+                            <span>Easy Returns</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recently Viewed Products -->
+            <div class="recently-viewed">
+                <h3>Wishlist <i class="bx bxs-heart"></i></h3>
+                <div class="recent-products" id="wishlist">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>About EasiCart</h5>
+                    <p>Your trusted online shopping destination for quality products at great prices.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Help Center</a></li>
+                        <li><a href="#" class="text-white-50">Contact Us</a></li>
+                        <li><a href="#" class="text-white-50">Returns & Refunds</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Sell on EasiCart</a></li>
+                        <li><a href="#" class="text-white-50">Become a Partner</a></li>
+                        <li><a href="#" class="text-white-50">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="bx bxl-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bx bxl-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2024 EasiCart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+    <script src="./js/auth-utils.js"></script>
+    <script src="./js/cart.js"></script>
+</body>
+</html>
