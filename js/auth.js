@@ -169,7 +169,7 @@ class AuthSystem {
   }
 
   async login(credentials, rememberMe) {
-    const res = await fetch("http://easicartapp.ademuyiwaadewoye.com/index.php?action=login", {
+    const res = await fetch("http://easicartapp.ademuyiwaadewoye.com/public/index.php?action=login", {
       method: "POST",
       body: JSON.stringify(credentials),
     });
@@ -190,7 +190,7 @@ class AuthSystem {
   }
 
   async register(user) {
-    const res = await fetch("http://easicartapp.ademuyiwaadewoye.com/index.php?action=signup", {
+    const res = await fetch("http://easicartapp.ademuyiwaadewoye.com/public/index.php?action=signup", {
       method: "POST",
       body: JSON.stringify(user),
     });
