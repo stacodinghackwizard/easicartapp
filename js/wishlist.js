@@ -20,7 +20,7 @@ class WishlistPage {
 
   async loadWishlist() {
     const res = await fetch(
-      `http://localhost:8000/index.php?action=wishlist&user_id=${this.currentUser.id}`
+      `http://easicartapp.ademuyiwaadewoye.com/index.php?action=wishlist&user_id=${this.currentUser.id}`
     );
     const data = await res.json();
     this.wishlist = data.data.map((w) => ({

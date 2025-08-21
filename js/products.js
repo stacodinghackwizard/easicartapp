@@ -38,7 +38,7 @@ class ProductsPage {
       this.showLoading(true);
 
       const res = await fetch(
-        `http://localhost:8000/index.php?action=products&user_id=${this.currentUser.id}`
+        `http://easicartapp.ademuyiwaadewoye.com/index.php?action=products&user_id=${this.currentUser.id}`
       );
       const data = await res.json();
       this.products = data.data;
@@ -457,7 +457,7 @@ class ProductsPage {
     }
 
     const res = await fetch(
-      `http://localhost:8000/index.php?action=cart&user_id=${currentUser.id}&product_id=${productId}`
+      `http://easicartapp.ademuyiwaadewoye.com/index.php?action=cart&user_id=${currentUser.id}&product_id=${productId}`
     );
     const data = await res.json();
     const existingItem = data.data;
@@ -465,7 +465,7 @@ class ProductsPage {
     if (existingItem) {
       existingItem.quantity += 1;
       await fetch(
-        `http://localhost:8000/index.php?action=cart&user_id=${currentUser.id}&product_id=${productId}`,
+        `http://easicartapp.ademuyiwaadewoye.com/index.php?action=cart&user_id=${currentUser.id}&product_id=${productId}`,
         {
           method: "PUT",
           body: JSON.stringify(existingItem),
@@ -473,7 +473,7 @@ class ProductsPage {
       );
     } else {
       await fetch(
-        `http://localhost:8000/index.php?action=cart&user_id=${currentUser.id}`,
+        `http://easicartapp.ademuyiwaadewoye.com/index.php?action=cart&user_id=${currentUser.id}`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -506,7 +506,7 @@ class ProductsPage {
     const exists = await this.checkWishlistStatus(productId);
     if (exists) {
       const res = await fetch(
-        `http://localhost:8000/index.php?action=wishlist`,
+        `http://easicartapp.ademuyiwaadewoye.com/index.php?action=wishlist`,
         {
           method: "DELETE",
           body: JSON.stringify({
@@ -526,7 +526,7 @@ class ProductsPage {
       }
       this.showNotification("Removed from wishlist", "info");
     } else {
-      await fetch(`http://localhost:8000/index.php?action=wishlist`, {
+      await fetch(`http://easicartapp.ademuyiwaadewoye.com/index.php?action=wishlist`, {
         method: "POST",
         body: JSON.stringify({
           user_id: currentUser.id,
@@ -549,7 +549,7 @@ class ProductsPage {
     if (!currentUser) return false;
 
     const res = await fetch(
-      `http://localhost:8000/index.php?action=products&user_id=${currentUser.id}&product_id=${productId}`
+      `http://easicartapp.ademuyiwaadewoye.com/index.php?action=products&user_id=${currentUser.id}&product_id=${productId}`
     );
     const data = await res.json();
     const product = data.data;
@@ -756,7 +756,7 @@ class ProductsPage {
     if (!currentUser) return;
 
     const res = await fetch(
-      `http://localhost:8000/index.php?action=cart&user_id=${currentUser.id}`
+      `http://easicartapp.ademuyiwaadewoye.com/index.php?action=cart&user_id=${currentUser.id}`
     );
     const data = await res.json();
     const cart = data.data;

@@ -449,7 +449,7 @@ class CheckoutPage {
     this.setProcessingState(true);
     try {
       const { cart, ...rest } = this.checkoutData;
-      const res = await fetch("http://localhost:8000/index.php?action=orders", {
+      const res = await fetch("http://easicartapp.ademuyiwaadewoye.com/index.php?action=orders", {
         method: "POST",
         body: JSON.stringify(rest),
       });

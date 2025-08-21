@@ -182,7 +182,7 @@ class CartPage {
       item.quantity -= 1;
     }
 
-    await fetch(`http://localhost:8000/index.php?action=cart`, {
+    await fetch(`http://easicartapp.ademuyiwaadewoye.com/index.php?action=cart`, {
       method: "PUT",
       body: JSON.stringify({
         user_id: this.currentUser.id,
@@ -198,7 +198,7 @@ class CartPage {
 
   async removeItem(productId) {
     this.cart = this.cart.filter((item) => item.id !== parseInt(productId));
-    await fetch(`http://localhost:8000/index.php?action=cart`, {
+    await fetch(`http://easicartapp.ademuyiwaadewoye.com/index.php?action=cart`, {
       method: "DELETE",
       body: JSON.stringify({
         product_id: productId,
@@ -215,7 +215,7 @@ class CartPage {
     if (confirm("Are you sure you want to clear your cart?")) {
       this.cart = [];
       this.applied_coupon = null;
-      await fetch(`http://localhost:8000/index.php?action=cart`, {
+      await fetch(`http://easicartapp.ademuyiwaadewoye.com/index.php?action=cart`, {
         method: "DELETE",
         body: JSON.stringify({
           user_id: this.currentUser.id,
@@ -337,7 +337,7 @@ class CartPage {
     if (!wishlist) return;
 
     const res = await fetch(
-      `http://localhost:8000/index.php?action=wishlist&user_id=${this.currentUser.id}`
+      `http://easicartapp.ademuyiwaadewoye.com/index.php?action=wishlist&user_id=${this.currentUser.id}`
     );
     const data = await res.json();
     const wishes = data.data.map((w) => ({
