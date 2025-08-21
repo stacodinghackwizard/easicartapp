@@ -173,7 +173,7 @@ class AuthUtils {
     if (!user) return;
 
     const res = await fetch(
-      `http://easicartapp.ademuyiwaadewoye.com/index.php?action=cart&user_id=${user.id}`
+      `http://easicartapp.ademuyiwaadewoye.com/public/index.php?action=cart&user_id=${user.id}`
     );
     const data = await res.json();
     const cart = data.data;
