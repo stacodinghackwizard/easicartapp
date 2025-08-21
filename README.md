@@ -14,7 +14,7 @@ A complete, responsive e-commerce web application built with HTML5, CSS3, and Ja
 
 ### 🛍️ Product Management
 
-- **Product Catalog**: Browse products from FakeStoreAPI
+- **Product Catalog**: Browse products from seeded products
 - **Advanced Filtering**: Filter by category, price range, and rating
 - **Search Functionality**: Search products by name and description
 - **Sorting Options**: Sort by relevance, price, rating, and newest
@@ -81,7 +81,7 @@ A complete, responsive e-commerce web application built with HTML5, CSS3, and Ja
 
 ```
 EasiCartApp/
-├── assets/                 # Images, icons, and media files
+├── assets/                # Images, icons, and media files
 │   ├── home-slides/       # Homepage slider images
 │   └── icons/             # Application icons
 ├── auth/                  # Authentication pages
@@ -123,16 +123,51 @@ EasiCartApp/
 ### Installation
 
 1. Clone or download the project files
+
+```
+git clone https://github.com/stacodinghackwizard/easicartapp.git
+```
+
 2. Place all files in your web server directory
-3. Open `index.html` in your browser
-4. Start exploring the application!
 
 ### Development Setup
 
 1. Use a local web server (e.g., Live Server in VS Code)
 2. Ensure all file paths are correct
-3. Check browser console for any errors
-4. Test on different devices and screen sizes
+3. Open `index.html` in your browser
+
+- Click open index.html in vscode
+- Install live server on VSCODE
+- Click Go Live at the bottom pane of vscode
+
+4. Visit http://localhost:5500
+5. Setup DB
+
+- Create a new database for the project
+- Paste the query in sql_schema.sql to bootstrap your db structure
+- Or alternatively run this command
+
+```
+  mysql -u root -p yourdbname < sql_schema.sql
+```
+
+- Seed your db with demo products by pasting the query in sql_seed.sql.
+
+- Or alternatively run this command
+
+```
+  mysql -u root -p yourdbname < sql_seed.sql
+```
+
+5. Start the backend server
+
+```
+cd public
+
+php -S localhost:8000
+```
+
+7. Start exploring the application!
 
 ## 💻 Usage
 
